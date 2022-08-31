@@ -15,7 +15,7 @@ def test_google_should_find_selene():
     browser.element('[id="search"]').should(have.text('yashaka/selene'))
 
 
-def test_google_should_not_find_python_tests_in_selenide_search():
+def test_google_should_find_selenide_negative():
     browser.open('https://google.com/ncr')
     browser.element('[name="q"]').should(be.blank).type('selene').press_enter()
     browser.element('[id="search"]').should_not(have.text('User-oriented UI Python'))
